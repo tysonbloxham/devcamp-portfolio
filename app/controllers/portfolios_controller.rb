@@ -40,5 +40,9 @@ class PortfoliosController < ApplicationController
   def blog_params
 	  params.require(:blog).permit(:title, :body)
   end
+  
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end
 
 end
