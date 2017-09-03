@@ -202,14 +202,20 @@ body {
   background-size: cover;
 }
 
+.black {
+  color: black;
+}
+
 .app-footer {
   color: white;
 }
 
-
-
-
-
+.background-card {
+  background-color: rgba(214, 216, 222, 0.8); 
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-radius: 15px;
+}
 
 
 
