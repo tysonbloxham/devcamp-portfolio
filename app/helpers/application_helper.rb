@@ -36,7 +36,7 @@ module ApplicationHelper
       },
       {
         url: portfolios_path,
-        title: 'Portfolio'
+        title: 'Current Games'
       },
     ]
   end
