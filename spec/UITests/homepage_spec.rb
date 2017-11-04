@@ -1,13 +1,22 @@
 require 'rails_helper'
 require 'selenium-webdriver'
 require_relative '../classes/baseclass.rb'
+require_relative '../classes/homepage.rb'
 
 describe 'BaseClass' do
-  it 'Goes to Google' do
-    browser = BaseClass.new("http://google.com")
-    ele = browser.find_element_with_wait("lst-ib", 5)
-    browser.write_things(ele)
-    sleep 5
-    expect(browser.search_bar.displayed?).to eq(true)
+  # it 'Goes to the homepage' do
+  # 	browser = HomePage.new()
+  # 	browser.setup("localhost:3000")
+  # 	sleep 5
+  # 	expect(browser.search_bar.displayed?).to eq(true)
+  # end
+
+  it 'logins in as an admin' do
+  	browser = HomePage.new()
+  	browser.setup("localhost:3000")
+  	sleep 5
+  	browser.admin_login()
+  	sleep 3
+  	expect(browser.search_bar.displayed?).to eq(true)
   end
 end

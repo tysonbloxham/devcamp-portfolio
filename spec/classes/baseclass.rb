@@ -2,10 +2,13 @@ require 'selenium-webdriver'
 
 class BaseClass
 
-  def initialize(url)
-    @driver=Selenium::WebDriver.for :safari
+  def initialize()
+    @driver=Selenium::WebDriver.for :chrome
+  end
+
+  def setup(url)
     @driver.manage.window.maximize
-    @driver.navigate.to url
+    @driver.navigate.to url 
   end
 
   def write_things(element)
@@ -16,18 +19,6 @@ class BaseClass
     wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
     wait.until { @driver.find_element(id: element_id) }
   end
-
-  # def setup
-  #   @driver = Selenium::WebDriver.for :safari
-  #   @driver.navigate.to "http://google.com"
-
-  #   element = @driver.find_element(name: 'q')
-  #   element.send_keys "Hello WebDriver!"
-
-  #   puts @driver.title
-
-  #   @driver.quit
-  # end
 
   def login_username()
     return @driver.find_element(:id,'login_login_username')
