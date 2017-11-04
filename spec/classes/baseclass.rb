@@ -20,6 +20,18 @@ class BaseClass
     wait.until { @driver.find_element(id: element_id) }
   end
 
+  def find_visible_element(how, what)
+    elems = @driver.find_elements(how, what).select { |e| e.displayed? }
+    len = elems.length
+    if len == 0
+      raise "No matches found."
+    elsif len > 1
+      raise "Ambiguous match. Found #{len} matches."
+    end
+    elems.first
+  end
+
+
   def login_username()
     return @driver.find_element(:id,'login_login_username')
   end

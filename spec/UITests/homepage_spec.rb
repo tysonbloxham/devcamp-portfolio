@@ -14,9 +14,8 @@ describe 'BaseClass' do
   it 'logins in as an admin' do
   	browser = HomePage.new()
   	browser.setup("localhost:3000")
-  	sleep 5
   	browser.admin_login()
-  	sleep 3
-  	expect(browser.search_bar.displayed?).to eq(true)
+  	expect(browser.logout_link.displayed?).to eq(true)
+  	browser.close_browser()
   end
 end
