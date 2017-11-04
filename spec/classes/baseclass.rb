@@ -4,6 +4,10 @@ class BaseClass
 
   def initialize()
     @driver=Selenium::WebDriver.for :chrome
+    @homepage_url = "localhost:3000"
+    @admin_email = "admin@test.com"
+    @admin_password = "Hansolo"
+
   end
 
   def setup(url)
@@ -11,13 +15,16 @@ class BaseClass
     @driver.navigate.to url 
   end
 
-  def write_things(element)
-    element.send_keys "Hello WebDriver!"
+  def write_things(element, writing)
+    element.send_keys writing
   end
 
-  def find_element_with_wait(element_id, time = 10)
+  def find_element_with_wait(what, time = 10)
     wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
-    wait.until { @driver.find_element(id: element_id) }
+    wait.until { 
+      element = @driver.find_element(what)
+      element if element.displayed?
+    }
   end
 
   def find_visible_element(how, what)
@@ -30,7 +37,6 @@ class BaseClass
     end
     elems.first
   end
-
 
   def login_username()
     return @driver.find_element(:id,'login_login_username')

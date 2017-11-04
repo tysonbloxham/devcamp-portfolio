@@ -2,10 +2,6 @@ require 'selenium-webdriver'
 
 class HomePage < BaseClass
 
-	homepage_url = "localhost:3000"
-	@admin_email = "admin@test.com"
-	@admin_password = "Hansolo"
-
 	def go_to()
 	  @driver.navigate.to homepage_url
 	end
@@ -15,25 +11,17 @@ class HomePage < BaseClass
   end
 
   def admin_login()
-    wait = Selenium::WebDriver::Wait.new(:timeout => 10)
-    login = wait.until {
-      element = @driver.find_element(link: 'Login')
-      element if element.displayed?
-    }
+    setup(@homepage_url)
+    login = find_element_with_wait(link: 'Login', "time" => 5)
     login.click
-    sleep 2
-   #  emailfield = @driver.find_element(xpath: '//*[@id="user_email"]')
+    
+    emailfield = find_element_with_wait(xpath: '//*[@id="user_email"]', "time" => 2)
+  	write_things(emailfield, @admin_email)
 
-    emailfield = wait.until {
-      element = @driver.find_element(xpath: '//*[@id="user_email"]')
-      element if element.displayed?
-    }
-  	emailfield.send_keys("admin@test.com")
+  	passwordfield = find_element_with_wait(xpath: '//*[@id="user_password"]')
+  	write_things(passwordfield, @admin_password)
 
-  	passwordfield = @driver.find_element(xpath: '//*[@id="user_password"]')
-  	passwordfield.send_keys("Hansolo")
-
-  	submitbutton = @driver.find_element(xpath: '//*[@id="new_user"]/div[4]/input')
+  	submitbutton = find_element_with_wait(xpath: '//*[@id="new_user"]/div[4]/input')
   	submitbutton.click
   end
 end
