@@ -39,6 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-byebug'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
@@ -63,5 +64,4 @@ gem 'carrierwave', '~> 1.1'
 gem 'mini_magick', '~> 4.8'
 gem 'carrierwave-aws', '~> 1.1'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
-gem 'rspec', '~> 3.7'
 gem 'selenium-webdriver', '~> 3.7'
