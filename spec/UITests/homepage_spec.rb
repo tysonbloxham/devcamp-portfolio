@@ -8,7 +8,7 @@ describe 'BaseClass' do
   	browser = HomePage.new()
   	browser.setup("localhost:3000")
   	sleep 2
-  	expect(browser.search_bar.displayed?).to eq(true)
+  	expect(browser.welcome_message.displayed?).to eq(true)
   	browser.close_browser()
   end
 
@@ -16,6 +16,13 @@ describe 'BaseClass' do
   	browser = HomePage.new()
   	browser.admin_login()
   	expect(browser.logout_link.displayed?).to eq(true)
+  	browser.close_browser()
+  end
+
+  it 'navigates to blog page' do
+  	browser = HomePage.new()
+  	browser.blogs_link()
+  	expect(browser.blog_identifier.displayed?).to eq(true)
   	browser.close_browser()
   end
 end

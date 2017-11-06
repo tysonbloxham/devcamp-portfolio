@@ -7,7 +7,6 @@ class BaseClass
     @homepage_url = "localhost:3000"
     @admin_email = "admin@test.com"
     @admin_password = "Hansolo"
-
   end
 
   def setup(url)
@@ -38,24 +37,12 @@ class BaseClass
     elems.first
   end
 
-  def login_username()
-    return @driver.find_element(:id,'login_login_username')
-  end
-
-  def login_password()
-    return @driver.find_element(:id,'login_login_password')
-  end
-
-  def submit_button()
-    return @driver.find_element(:id,'login_submit')
-  end
-
   def logout_link()
     @driver.find_element(:link_text,'Logout')
   end
 
-  def search_bar()
-    @driver.find_element(:name, 'q')
+  def blog_identifier()
+    find_element_with_wait(xpath: "/html/body/div[2]/div/h1", "time" => 5)
   end
 
   def close_browser()

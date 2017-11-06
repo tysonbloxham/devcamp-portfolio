@@ -24,4 +24,14 @@ class HomePage < BaseClass
   	submitbutton = find_element_with_wait(xpath: '//*[@id="new_user"]/div[4]/input')
   	submitbutton.click
   end
+
+  def blogs_link()
+    setup(@homepage_url)
+    blog = find_element_with_wait(link: 'Blog', "time" => 5)
+    blog.click
+  end
+
+  def welcome_message()
+    find_element_with_wait(xpath: '/html/body/div/div/div/div[2]/h1')    
+  end
 end
