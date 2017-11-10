@@ -7,7 +7,6 @@ class HomePage < BaseClass
 	end
 
   def admin_login()
-    setup(@homepage_url)
     login = find_element_with_wait(link: 'Login', "time" => 5)
     login.click
     
@@ -22,7 +21,6 @@ class HomePage < BaseClass
   end
 
   def blogs_link()
-    setup(@homepage_url)
     blog = find_element_with_wait(link: 'Blog', "time" => 5)
     blog.click
   end
