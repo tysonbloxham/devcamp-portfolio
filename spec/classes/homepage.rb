@@ -6,10 +6,6 @@ class HomePage < BaseClass
 	  @driver.navigate.to homepage_url
 	end
 
-  def search_bar()
-    @driver.find_element(tag_name: 'h1', text: 'Welcome')
-  end
-
   def admin_login()
     setup(@homepage_url)
     login = find_element_with_wait(link: 'Login', "time" => 5)
