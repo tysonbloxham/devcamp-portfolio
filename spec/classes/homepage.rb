@@ -25,6 +25,16 @@ class HomePage < BaseClass
     blog.click
   end
 
+  def about_me_link()
+    about_me = find_element_with_wait(link: 'About Me', "time" => 5)
+    about_me.click    
+  end
+
+  def contact_link()
+    contact = find_element_with_wait(link: 'Contact', "time" => 5)
+    contact.click
+  end
+
   def welcome_message()
     find_element_with_wait(xpath: '/html/body/div/div/div/div[2]/h1')    
   end

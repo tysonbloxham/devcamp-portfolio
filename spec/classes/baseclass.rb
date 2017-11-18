@@ -45,6 +45,14 @@ class BaseClass
     find_element_with_wait(xpath: "/html/body/div[2]/div/h1", "time" => 5)
   end
 
+  def about_identifier()
+    find_element_with_wait(xpath: "/html/body/div/div/div/div[2]/h1", "time" => 5)
+  end
+
+  def contact_identifier()
+    find_element_with_wait(xpath: "/html/body/div/div/div/div[2]/div/div[1]/p[2]/a", "time" => 5)    
+  end
+
   def close_browser()
     @driver.quit
   end
