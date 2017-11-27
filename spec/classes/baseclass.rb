@@ -40,7 +40,7 @@ class BaseClass
   end
 
   def logout_link()
-    @driver.find_element(:link_text,'Logout')
+    find_element_with_wait(link: 'Logout', "time" => 5)
   end
 
   def login_link()
