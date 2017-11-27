@@ -21,7 +21,12 @@ describe 'HomePage' do
   it 'logs in as an admin' do
   	@browser.admin_login()
   	expect(@browser.logout_link.displayed?).to eq(true)
-  end
+	end
+	
+	it 'logs in with incorrect info' do
+		@browser.wrong_login()
+		expect(@browser.login_link().displayed?).to eq(true)
+	end
 
   it 'navigates to blog page' do
   	@browser.blogs_link()

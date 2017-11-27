@@ -7,6 +7,8 @@ class BaseClass
     @homepage_url = "localhost:3000"
     @admin_email = "admin@test.com"
     @admin_password = "Hansolo"
+    @wrong_email = "wrong@wrong.com"
+    @wrong_password = "wrongwrongwrong"
   end
 
   def setup(url)
@@ -39,6 +41,10 @@ class BaseClass
 
   def logout_link()
     @driver.find_element(:link_text,'Logout')
+  end
+
+  def login_link()
+    find_element_with_wait(link: 'Login', "time" => 5)
   end
 
   def blog_identifier()
