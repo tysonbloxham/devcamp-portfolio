@@ -34,7 +34,7 @@ class HomePage < BaseClass
   end
 
   def about_me_link()
-    about_me = find_element_with_wait(link: 'About Me', "time" => 5)
+    about_me = find_element_with_wait(xpath: "//a[@href='/about-me'][text()='About Me'][text()='About Me']", "time" => 5)
     about_me.click    
   end
 

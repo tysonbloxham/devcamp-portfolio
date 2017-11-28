@@ -33,12 +33,12 @@ describe 'HomePage' do
   	expect(@browser.blog_identifier.displayed?).to eq(true)
   end
 
-  it 'navigates to about me page via nav bar' do
-  	@browser.about_me_link()
+	it 'navigates to about me page via nav bar' do
+		@browser.about_me_link()
   	expect(@browser.about_identifier.displayed?).to eq(true)
 	end
 	
-	it 'navigate to about me page using button' do
+	it 'navigates to about me page via button' do
 		@browser.about_me_button()
 		sleep 3
 		expect(@browser.about_identifier.displayed?).to eq(true)
