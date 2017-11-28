@@ -40,7 +40,6 @@ describe 'HomePage' do
 
   it 'navigate to contact page' do
   	@browser.contact_link()
-  	sleep 3
   	expect(@browser.contact_identifier.displayed?).to eq(true)
   end
 end
