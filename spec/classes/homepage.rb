@@ -38,6 +38,11 @@ class HomePage < BaseClass
     about_me.click    
   end
 
+  def about_me_button()
+    about_button = find_element_with_wait(xpath: "//A[@class='btn btn-lg btn-primary'][text()='About Me']", "time" => 5)
+    about_button.click
+  end
+
   def contact_link()
     contact = find_element_with_wait(link: 'Contact', "time" => 5)
     contact.click
