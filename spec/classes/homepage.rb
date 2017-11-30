@@ -2,6 +2,15 @@ require 'selenium-webdriver'
 
 class HomePage < BaseClass
 
+  def initialize
+    super
+    @homepage_url = "localhost:3000"
+    @admin_email = "admin@test.com"
+    @admin_password = "Hansolo"
+    @wrong_email = "wrong@wrong.com"
+    @wrong_password = "wrongwrongwrong"
+  end
+
 	def go_to()
 	  @driver.navigate.to homepage_url
   end

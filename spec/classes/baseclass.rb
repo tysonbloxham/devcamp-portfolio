@@ -4,11 +4,6 @@ class BaseClass
 
   def initialize()
     @driver=Selenium::WebDriver.for :chrome
-    @homepage_url = "localhost:3000"
-    @admin_email = "admin@test.com"
-    @admin_password = "Hansolo"
-    @wrong_email = "wrong@wrong.com"
-    @wrong_password = "wrongwrongwrong"
   end
 
   def setup(url)
