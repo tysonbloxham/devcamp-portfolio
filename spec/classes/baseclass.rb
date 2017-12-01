@@ -17,10 +17,15 @@ class BaseClass
 
   def find_element_with_wait(what, time = 10)
     wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
-    wait.until { 
-      element = @driver.find_element(what)
-      element if element.displayed?
-    }
+    begin
+      wait.until {
+        element = @driver.find_element(what)
+        element if element.displayed?
+      }
+    rescue Selenium::WebDriver::Error::TimeOutError
+      puts "Couldn't find #{what}"
+      return false
+    end
   end
 
   def find_visible_element(how, what)
