@@ -17,4 +17,8 @@ describe 'Blogs Page' do
    sleep 2
    expect(@browser.blog_identifier.displayed?).to eq(true)
   end
+
+  it 'makes sure users must be signed in to write new blogs' do
+    expect(@browser.new_blog_link()).to eq(false)
+  end
 end
