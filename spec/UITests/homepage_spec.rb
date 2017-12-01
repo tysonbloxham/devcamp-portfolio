@@ -1,5 +1,5 @@
-require 'rails_helper'
 require 'selenium-webdriver'
+require 'rails_helper'
 require_relative '../classes/baseclass.rb'
 require_relative '../classes/homepage.rb'
 
