@@ -39,6 +39,28 @@ class BaseClass
     elems.first
   end
 
+  def login(email, password)
+    login = login_link() 
+    login.click
+    
+    emailfield = find_element_with_wait(xpath: '//*[@id="user_email"]', "time" => 2)
+  	write_things(emailfield, email)
+
+  	passwordfield = find_element_with_wait(xpath: '//*[@id="user_password"]')
+  	write_things(passwordfield, password)
+
+  	submitbutton = find_element_with_wait(xpath: '//*[@id="new_user"]/div[4]/input')
+  	submitbutton.click
+  end
+
+  def admin_login()
+    login(@admin_email, @admin_password)
+  end
+
+  def wrong_login()
+    login(@wrong_email, @wrong_password)
+  end
+
   def logout_link()
     find_element_with_wait(link: 'Logout', "time" => 5)
   end
