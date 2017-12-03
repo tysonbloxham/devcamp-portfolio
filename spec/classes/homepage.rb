@@ -37,11 +37,6 @@ class HomePage < BaseClass
     login(@wrong_email, @wrong_password)
   end
 
-  def blogs_link()
-    blog = find_element_with_wait(link: 'Blog', "time" => 5)
-    blog.click
-  end
-
   def about_me_link()
     about_me = find_element_with_wait(xpath: "//a[@href='/about-me'][text()='About Me'][text()='About Me']", "time" => 5)
     about_me.click    

@@ -47,6 +47,12 @@ class BaseClass
     find_element_with_wait(link: 'Login', "time" => 5)
   end
 
+  def blogs_link()
+    blog = find_element_with_wait(link: 'Blog', "time" => 5)
+    blog.click
+  end
+
+
   def blog_identifier()
     find_element_with_wait(xpath: "/html/body/div[2]/div/h1", "time" => 5)
   end
