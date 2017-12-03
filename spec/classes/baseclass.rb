@@ -4,6 +4,8 @@ class BaseClass
 
   def initialize()
     @driver=Selenium::WebDriver.for :chrome
+    @admin_email = "admin@test.com"
+    @admin_password = "Hansolo"
   end
 
   def setup(url)
@@ -55,10 +57,6 @@ class BaseClass
 
   def admin_login()
     login(@admin_email, @admin_password)
-  end
-
-  def wrong_login()
-    login(@wrong_email, @wrong_password)
   end
 
   def logout_link()

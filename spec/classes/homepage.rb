@@ -5,8 +5,6 @@ class HomePage < BaseClass
   def initialize
     super
     @homepage_url = "localhost:3000"
-    @admin_email = "admin@test.com"
-    @admin_password = "Hansolo"
     @wrong_email = "wrong@wrong.com"
     @wrong_password = "wrongwrongwrong"
   end
@@ -15,6 +13,9 @@ class HomePage < BaseClass
 	  @driver.navigate.to homepage_url
   end
   
+  def wrong_login()
+    login(@wrong_email, @wrong_password)
+  end
 
   def about_me_link()
     about_me = find_element_with_wait(xpath: "//a[@href='/about-me'][text()='About Me'][text()='About Me']", "time" => 5)

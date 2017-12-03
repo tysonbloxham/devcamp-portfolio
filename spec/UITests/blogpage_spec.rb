@@ -21,4 +21,10 @@ describe 'Blogs Page' do
   it 'makes sure users must be signed in to write new blogs' do
     expect(@browser.new_blog_link()).to eq(false)
   end
+
+  it 'logins in from blogs page and navigate back to blogs' do
+    @browser.login_on_blogs()
+    expect(@browser.blog_identifier.displayed?).to eq(true)
+    expect(@browser.login_link).to eq(false)
+  end
 end
