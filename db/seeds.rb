@@ -37,3 +37,12 @@ end
     name: "Technology #{technology}"
   )
 end
+
+User.create!(
+	email: "admin@test.com",
+	name: "admin",
+	password: "Hansolo",
+	password_confirmation: "Hansolo",
+	roles: "site_admin"
+)
+puts "1 admin created!"
