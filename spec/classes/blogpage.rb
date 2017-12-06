@@ -14,6 +14,27 @@ class BlogPage < BaseClass
     find_element_with_wait(xpath: "/html/body/div[2]/div/a", "time" => 15 )
   end
 
+  def write_blog_title(text)
+    title = find_element_with_wait(xpath: '//*[@id="blog_title"]', 'time' => 5 )
+    write_things( title, text )
+  end
+
+  def write_blog_body(text)
+    body = find_element_with_wait(xpath: '//*[@id="blog_body"]', 'time' => 3 )
+    write_things( body, text )
+  end
+
+  def blog_submit()
+    submit = find_element_with_wait(xpath: '//*[@id="new_blog"]/div[3]/input', 'time' => 3 )
+    submit.click()
+  end
+
+  def write_new_blog()
+    write_blog_title("A Title")
+    write_blog_body("This is a body")
+    blog_submit()
+  end
+
   def login_on_blogs()
     admin_login()
     goto()    
