@@ -41,6 +41,10 @@ class BaseClass
     elems.first
   end
 
+  def accept_alert()
+    @driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
+  end
+
   def login(email, password)
     login = login_link() 
     login.click

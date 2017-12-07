@@ -33,6 +33,6 @@ describe 'Blogs Page' do
     @browser.new_blog_link.click()
     @browser.write_new_blog()
     expect(@browser.get_title()).to eq("A Title")
-    # TODO: Add clean up method which deletes those blogs afterwards
+    @browser.delete_blog_on_show()
   end
 end
