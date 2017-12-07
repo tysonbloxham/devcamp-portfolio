@@ -43,4 +43,12 @@ describe 'Blogs Page' do
     @browser.blog_submit()
     expect(@browser.missing_info_error.displayed?).to eq(true)
   end
+
+  it 'tries to write a blog without a body' do
+    @browser.login_on_blogs()
+    @browser.new_blog_link.click()
+    @browser.write_blog_title('Some Kind of Title')
+    @browser.blog_submit()
+    expect(@browser.missing_info_error.displayed?).to eq(true)
+  end
 end
