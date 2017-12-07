@@ -28,11 +28,19 @@ describe 'Blogs Page' do
     expect(@browser.login_link).to eq(false)
   end
 
-  it 'writes a new blog special' do
+  it 'writes a new blog' do
     @browser.login_on_blogs()
     @browser.new_blog_link.click()
     @browser.write_new_blog()
     expect(@browser.get_title()).to eq("A Title")
     @browser.delete_blog_on_show()
+  end
+
+  it 'tries to write a blog without a title' do
+    @browser.login_on_blogs()
+    @browser.new_blog_link.click()
+    @browser.write_blog_body('Something something something')
+    @browser.blog_submit()
+    expect(@browser.missing_info_error.displayed?).to eq(true)
   end
 end

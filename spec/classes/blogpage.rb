@@ -35,6 +35,10 @@ class BlogPage < BaseClass
     blog_submit()
   end
 
+  def missing_info_error()
+    find_element_with_wait(xpath: '//*[@id="error_explanation"]/ul/li', 'time' => 3 )
+  end
+
   def login_on_blogs()
     admin_login()
     goto()    
