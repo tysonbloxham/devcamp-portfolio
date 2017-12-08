@@ -40,7 +40,7 @@ class BlogPage < BaseClass
   end
 
   def github_link()
-    find_element_with_wait(xpath: '/html/body/div[3]/div/div[2]/div[2]/ol/li/a/i', 'time' => 3 ).click()
+    find_element_with_wait(xpath: "//*[@class='fa fa-github']", 'time' => 3 ).click()
   end
 
   def login_on_blogs()
