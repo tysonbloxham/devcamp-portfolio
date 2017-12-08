@@ -52,7 +52,7 @@ describe 'Blogs Page' do
     expect(@browser.missing_info_error.displayed?).to eq(true)
   end
 
-  it 'navigates to github current' do
+  it 'navigates to github' do
     @browser.github_link()
     @browser.switching_tabs()
     expect(@browser.get_title()).to include("tysonbloxham")
