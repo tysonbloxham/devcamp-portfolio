@@ -76,6 +76,9 @@ class BaseClass
     blog.click
   end
 
+  def switching_tabs()
+    @driver.switch_to.window( @driver.window_handles.last )
+  end
 
   def blog_identifier()
     find_element_with_wait(xpath: "/html/body/div[2]/div/h1", "time" => 5)

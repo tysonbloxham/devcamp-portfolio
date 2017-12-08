@@ -39,6 +39,10 @@ class BlogPage < BaseClass
     find_element_with_wait(xpath: '//*[@id="error_explanation"]/ul/li', 'time' => 3 )
   end
 
+  def github_link()
+    find_element_with_wait(xpath: '/html/body/div[3]/div/div[2]/div[2]/ol/li/a/i', 'time' => 3 ).click()
+  end
+
   def login_on_blogs()
     admin_login()
     goto()    
