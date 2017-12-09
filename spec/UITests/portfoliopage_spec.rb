@@ -21,4 +21,9 @@ describe 'Portfolio Page' do
     @browser.login_on_portfolio()
     expect(@browser.masthead_identifier).to eq(false)
   end
+
+  it 'goes to blog via button' do
+    @browser.blog_button()
+    expect(@browser.blog_identifier.displayed?).to eq(true)
+  end
 end
