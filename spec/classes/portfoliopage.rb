@@ -24,6 +24,10 @@ class PortfolioPage < BaseClass
     find_element_with_wait(xpath: '/html/body/section/div/p[2]/a[2]').click()
   end
 
+  def about_me_button()
+    find_element_with_wait(xpath: '/html/body/section/div/p[2]/a[1]').click()
+  end
+
   def masthead_identifier()
     find_element_with_wait(xpath: "/html/body/section/div/h1")
   end

@@ -26,4 +26,9 @@ describe 'Portfolio Page' do
     @browser.blog_button()
     expect(@browser.blog_identifier.displayed?).to eq(true)
   end
+
+  it 'goes to about me via button' do
+    @browser.about_me_button()
+    expect(@browser.about_identifier.displayed?).to eq(true)
+  end
 end
