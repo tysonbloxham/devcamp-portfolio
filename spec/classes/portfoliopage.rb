@@ -10,4 +10,17 @@ class PortfolioPage < BaseClass
     @driver.navigate.to @portfolios_url
   end
   
+  def open_navbar()
+    portfolio_identifier.click()   
+  end
+  
+  def login_on_portfolio()
+    open_navbar()
+    admin_login()
+    goto()
+  end
+
+  def masthead_identifier()
+    find_element_with_wait(xpath: "/html/body/section/div/h1")
+  end
 end

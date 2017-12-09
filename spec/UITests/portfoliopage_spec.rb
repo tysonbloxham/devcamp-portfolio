@@ -16,4 +16,9 @@ describe 'Portfolio Page' do
   it 'goes to portfolio page' do
     expect(@browser.portfolio_identifier.displayed?).to eq(true)
   end
+
+  it 'doesn\'t show masthead to admins' do
+    @browser.login_on_portfolio()
+    expect(@browser.masthead_identifier).to eq(false)
+  end
 end
