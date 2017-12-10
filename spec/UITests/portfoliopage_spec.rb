@@ -31,4 +31,9 @@ describe 'Portfolio Page' do
     @browser.about_me_button()
     expect(@browser.about_identifier.displayed?).to eq(true)
   end
+
+  it 'goes to show of a portfolio' do
+    @browser.first_portfolio_show()
+    expect(@browser.show_identifier.displayed?).to eq(true)
+  end 
 end
