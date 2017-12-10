@@ -33,7 +33,14 @@ describe 'Portfolio Page' do
   end
 
   it 'goes to show of a portfolio' do
-    @browser.first_portfolio_show()
+    @browser.first_portfolio_show.click()
     expect(@browser.show_identifier.displayed?).to eq(true)
   end 
+
+  it 'goes to all portfolios from the show page' do
+    @browser.first_portfolio_show.click()
+    expect(@browser.show_identifier.displayed?).to eq(true)
+    @browser.all_portfolios_link()
+    expect(@browser.first_portfolio_show.displayed?).to eq(true)
+  end
 end
