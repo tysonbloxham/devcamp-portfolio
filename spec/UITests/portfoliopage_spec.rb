@@ -32,6 +32,12 @@ describe 'Portfolio Page' do
     expect(@browser.about_identifier.displayed?).to eq(true)
   end
 
+  it 'logs in from portfolio page' do
+    @browser.login_on_portfolio()
+    @browser.open_navbar()
+    expect(@browser.login_link()).to eq(false)
+  end
+
   it 'goes to show of a portfolio' do
     @browser.first_portfolio_show.click()
     expect(@browser.show_identifier.displayed?).to eq(true)
