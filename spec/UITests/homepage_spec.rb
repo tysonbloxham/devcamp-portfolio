@@ -6,7 +6,7 @@ require_relative '../classes/homepage.rb'
 describe 'HomePage' do
 	before(:each) do
 		@browser = HomePage.new()
-		@browser.setup("localhost:3000")
+		@browser.goto()
 	end
 
 	after(:each) do

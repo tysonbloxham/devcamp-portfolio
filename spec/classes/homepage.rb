@@ -9,8 +9,8 @@ class HomePage < BaseClass
     @wrong_password = "wrongwrongwrong"
   end
 
-	def go_to()
-	  @driver.navigate.to homepage_url
+  def goto()
+    setup(@homepage_url)
   end
   
   def wrong_login()

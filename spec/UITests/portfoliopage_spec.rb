@@ -6,7 +6,7 @@ require_relative '../classes/portfoliopage.rb'
 describe 'Portfolio Page' do
   before(:each) do
     @browser = PortfolioPage.new
-    @browser.setup('localhost:3000/portfolios')
+    @browser.goto()
   end
   
   after(:each) do

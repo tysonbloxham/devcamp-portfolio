@@ -7,7 +7,7 @@ class BlogPage < BaseClass
   end
 
   def goto()
-    @driver.navigate.to(@blogs_url)
+    setup(@blogs_url)
   end
 
   def new_blog_link()

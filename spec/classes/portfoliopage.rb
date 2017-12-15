@@ -7,7 +7,7 @@ class PortfolioPage < BaseClass
   end
 
   def goto()
-    @driver.navigate.to @portfolios_url
+    setup(@portfolios_url)
   end
   
   def open_navbar()

@@ -30,17 +30,6 @@ class BaseClass
     end
   end
 
-  def find_visible_element(how, what)
-    elems = @driver.find_elements(how, what).select { |e| e.displayed? }
-    len = elems.length
-    if len == 0
-      raise "No matches found."
-    elsif len > 1
-      raise "Ambiguous match. Found #{len} matches."
-    end
-    elems.first
-  end
-
   def accept_alert()
     @driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
   end

@@ -6,7 +6,7 @@ require_relative '../classes/blogpage.rb'
 describe 'Blogs Page' do
   before(:each) do
 		@browser = BlogPage.new()
-		@browser.setup("localhost:3000/blogs")
+		@browser.goto()
   end
   
   after(:each) do
