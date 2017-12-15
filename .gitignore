@@ -19,5 +19,8 @@
 # I don't want to show my secrets
 /config/secrets.yml
 
-# Ignore vscode lauch files
+# Ignore vscode launch files
 .vscode/launch.json
+
+# Ignore rspec test tracking files
+examples.txt
