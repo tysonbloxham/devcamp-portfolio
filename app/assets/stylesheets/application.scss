@@ -12,6 +12,14 @@ a:hover {
 }
 
 /* Custom default button */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #7B849F;
+  color: #FFF3DA;
+  border: .05rem solid #7B849F;
+}
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {

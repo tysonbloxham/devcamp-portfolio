@@ -14,6 +14,16 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  background-color: #F4F4F6
+}
+
+a,
+a:active {
+  color: #4ba9c5;
+}
+
+a:hover {
+  color: #208fad;
 }
 
 h1, .h1,
@@ -43,7 +53,7 @@ h6, .h6 {
 
 .blog-masthead {
   margin-bottom: 3rem;
-  background-color: #428bca;
+  background-color: #556286;
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }
@@ -93,6 +103,7 @@ h6, .h6 {
   margin-bottom: 0;
   font-size: 2rem;
   font-weight: normal;
+  color: #4ba9c5;
 }
 .blog-description {
   font-size: 1.1rem;
@@ -161,7 +172,7 @@ h6, .h6 {
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #f4f4f6;
   border-top: .05rem solid #e5e5e5;
 }
 .blog-footer p:last-child {

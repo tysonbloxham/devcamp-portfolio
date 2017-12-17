@@ -5,6 +5,14 @@ body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
 
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #224ec4;
+  color: #FFF3DA;
+  border: .05rem solid #224ec4;
+}
+
 .navbar {
   margin-bottom: 0;
 }
