@@ -12,11 +12,15 @@ a:focus {
 }
 
 .btn-primary,
-.btn-primary:hover,
 .btn-primary:focus {
   background-color: #224ec4;
   color: #FFF3DA;
   border: .05rem solid #224ec4;
+}
+
+.btn-primary:hover {
+  background-color: #2049b3d0;
+  border: .05rem solid #2049b3d0;
 }
 
 .navbar {
