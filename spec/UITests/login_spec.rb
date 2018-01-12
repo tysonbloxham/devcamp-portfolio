@@ -12,4 +12,10 @@ describe 'Login' do
   after(:each) do
     @browser.close_browser()
   end
+
+  it 'Creates a new user' do
+    sleep 2
+    @browser.create_new_user()
+    sleep 5
+  end
 end
