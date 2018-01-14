@@ -32,4 +32,9 @@ class Login < BaseClass
     name = find_element_with_wait(xpath: '//*[@id="user_name"]')
     write_things(name, @new_name)
   end
+
+  def submit_button()
+    sign_up = find_element_with_wait(xpath: '//*[@id="new_user"]/div/div[4]/div[1]/input')
+    sign_up.click()
+  end
 end

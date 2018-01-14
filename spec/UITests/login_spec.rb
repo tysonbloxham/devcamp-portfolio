@@ -14,8 +14,8 @@ describe 'Login' do
   end
 
   it 'Creates a new user' do
-    sleep 2
     @browser.create_new_user()
-    sleep 5
+    @browser.submit_button()
+    expect(@browser.logout_link.displayed?).to eq(true)
   end
 end
