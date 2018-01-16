@@ -34,10 +34,10 @@ class BaseClass
     @driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
   end
 
-  def login(email, password, using_url = true)
+  def login(email, password, using_link = false)
     # login = login_link() 
     # login.click
-    login_link.click() unless using_url
+    login_link.click() if using_link
     
     emailfield = find_element_with_wait(xpath: '//*[@id="user_email"]', "time" => 2)
   	write_things(emailfield, email)
@@ -51,8 +51,8 @@ class BaseClass
   	submitbutton.click
   end
 
-  def admin_login(using_url = true)
-    login(@admin_email, @admin_password, using_url)
+  def admin_login(using_link = false)
+    login(@admin_email, @admin_password, using_link)
   end
 
   def logout_link()

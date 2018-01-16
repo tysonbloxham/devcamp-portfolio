@@ -16,7 +16,7 @@ class PortfolioPage < BaseClass
   
   def login_on_portfolio()
     open_navbar()
-    admin_login(false)
+    admin_login(true)
     goto()
   end
 
