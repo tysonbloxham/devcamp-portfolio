@@ -35,8 +35,6 @@ class BaseClass
   end
 
   def login(email, password, using_link = false)
-    # login = login_link() 
-    # login.click
     login_link.click() if using_link
     
     emailfield = find_element_with_wait(xpath: '//*[@id="user_email"]', "time" => 2)
@@ -45,8 +43,6 @@ class BaseClass
   	passwordfield = find_element_with_wait(xpath: '//*[@id="user_password"]')
     write_things(passwordfield, password)
     
-    # find_element_with_wait(value: 'Log in').click
-
   	submitbutton = find_element_with_wait(xpath: '//*[@id="new_user"]/div[4]/input')
   	submitbutton.click
   end
