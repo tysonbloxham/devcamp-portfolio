@@ -44,7 +44,7 @@ class BlogPage < BaseClass
   end
 
   def login_on_blogs()
-    admin_login()
+    admin_login(false)
     goto()    
   end
 

@@ -9,6 +9,8 @@ class Login < BaseClass
     @new_login = Faker::Internet.email
     @new_password = 'asdfasdf'
     @new_name = Faker::StarWars.character
+    @wrong_email = "wrong@wrong.com"
+    @wrong_password = "wrongwrongwrong"
   end
 
   def goto_register()
@@ -16,10 +18,12 @@ class Login < BaseClass
   end
 
   def goto_login()
-    setup(@register_url)
+    setup(@login_url)
   end
 
   def create_new_user()
+    goto_register()
+
     email = find_element_with_wait(xpath: '//*[@id="user_email"]')
     write_things(email, @new_login)
 
@@ -31,6 +35,10 @@ class Login < BaseClass
 
     name = find_element_with_wait(xpath: '//*[@id="user_name"]')
     write_things(name, @new_name)
+  end
+
+  def wrong_login()
+    login(@wrong_email, @wrong_password)
   end
 
   def submit_button()

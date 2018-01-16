@@ -16,16 +16,6 @@ describe 'HomePage' do
   it 'Goes to the homepage' do
   	sleep 2
   	expect(@browser.welcome_message.displayed?).to eq(true)
-  end
-
-  it 'logs in as an admin' do
-  	@browser.admin_login()
-  	expect(@browser.logout_link.displayed?).to eq(true)
-	end
-	
-	it 'logs in with incorrect info' do
-		@browser.wrong_login()
-		expect(@browser.login_link().displayed?).to eq(true)
 	end
 
   it 'navigates to blog page' do

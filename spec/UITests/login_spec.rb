@@ -6,7 +6,7 @@ require_relative '../classes/login.rb'
 describe 'Login' do
   before(:each) do
     @browser = Login.new()
-    @browser.goto_register()
+    @browser.goto_login()
   end
 
   after(:each) do
@@ -18,4 +18,18 @@ describe 'Login' do
     @browser.submit_button()
     expect(@browser.logout_link.displayed?).to eq(true)
   end
+
+  it 'logs in as an admin' do
+    sleep 2
+    @browser.admin_login()
+    sleep 2
+  	expect(@browser.logout_link().displayed?).to eq(true)
+	end
+	
+  it 'logs in with incorrect info' do
+    sleep 2
+    @browser.wrong_login()
+    sleep 2
+		expect(@browser.login_link().displayed?).to eq(true)
+	end
 end
