@@ -25,9 +25,7 @@ describe 'Login' do
 	end
 	
   it 'logs in with incorrect info' do
-    sleep 2
     @browser.wrong_login()
-    sleep 2
 		expect(@browser.login_link().displayed?).to eq(true)
 	end
 end
