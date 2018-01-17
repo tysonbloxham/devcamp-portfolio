@@ -22,6 +22,10 @@ describe 'Portfolio Page' do
     expect(@browser.masthead_identifier).to eq(false)
   end
 
+  it 'shows masthead to guests' do
+    expect(@browser.masthead_identifier.displayed?).to eq(true)
+  end
+
   it 'goes to blog via button' do
     @browser.blog_button()
     expect(@browser.blog_identifier.displayed?).to eq(true)
