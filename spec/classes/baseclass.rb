@@ -77,7 +77,8 @@ class BaseClass
   end
 
   def about_identifier()
-    find_element_with_wait(xpath: "/html/body/div/div/div/div[2]/h1", "time" => 5)
+    find_element_with_wait(xpath: "//h1[text()='About Me']", "time" => 5)
+    # "/html/body/div/div/div/div[2]/h1", "time" => 5)
   end
 
   def contact_identifier()
