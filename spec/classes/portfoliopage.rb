@@ -11,7 +11,7 @@ class PortfolioPage < BaseClass
   end
   
   def open_navbar()
-    portfolio_identifier.click()   
+    navicon.click()   
   end
   
   def login_on_portfolio()

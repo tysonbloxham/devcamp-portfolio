@@ -73,6 +73,10 @@ class BaseClass
   end
 
   def portfolio_identifier()
+    find_element_with_wait(xpath: "//h1[text()='My Portfolio']", "time" => 5)
+  end
+
+  def navicon()
     find_element_with_wait(xpath: "/html/body/nav/div/button/span", "time" => 5)
   end
 
