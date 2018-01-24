@@ -21,7 +21,7 @@ class PortfolioPage < BaseClass
   end
 
   def blog_button()
-    find_element_with_wait(xpath: '/html/body/section/div/p[2]/a[2]').click()
+    find_element_with_wait(xpath: "//a[@class='btn btn-secondary']", 'time' => 5).click()
   end
   
   def about_me_button()
