@@ -25,7 +25,7 @@ class PortfolioPage < BaseClass
   end
   
   def about_me_button()
-    find_element_with_wait(xpath: '/html/body/section/div/p[2]/a[1]').click()
+    find_element_with_wait(xpath: "//a[@class='btn btn-primary']").click()
   end
   
   def all_portfolios_link()
