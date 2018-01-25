@@ -29,7 +29,8 @@ class PortfolioPage < BaseClass
   end
   
   def all_portfolios_link()
-    find_element_with_wait(xpath: '/html/body/footer/div/p/a[1]', 'time' => 5 ).click()
+    find_element_with_wait(xpath: "//p[@class='float-right'][a][1]").click()
+    # find_element_with_wait(xpath: '/html/body/footer/div/p/a[1]', 'time' => 5 ).click()
   end
 
   def first_portfolio_show()
