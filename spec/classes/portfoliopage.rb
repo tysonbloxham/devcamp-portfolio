@@ -37,7 +37,7 @@ class PortfolioPage < BaseClass
   end
   
   def show_identifier()
-    find_element_with_wait(xpath: '/html/body/div[2]/div/div[1]/img')
+    find_element_with_wait(xpath: "//h3[contains(text(), 'Technologies')")
   end
 
   def masthead_identifier()
