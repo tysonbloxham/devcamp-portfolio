@@ -33,7 +33,7 @@ class PortfolioPage < BaseClass
   end
 
   def first_portfolio_show()
-    find_element_with_wait(xpath: '/html/body/div[2]/div/div/div[1]/p/span/a', 'time' => 5 )
+    find_element_with_wait(xpath: "//div[@class='card'][1]/p/span/a")
   end
   
   def show_identifier()
