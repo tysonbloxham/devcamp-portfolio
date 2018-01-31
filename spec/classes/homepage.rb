@@ -27,6 +27,6 @@ class HomePage < BaseClass
   end
 
   def welcome_message()
-    find_element_with_wait(xpath: '/html/body/div/div/div/div[2]/h1')    
+    find_element_with_wait(xpath: "//h1[text()='Welcome']")
   end
 end
