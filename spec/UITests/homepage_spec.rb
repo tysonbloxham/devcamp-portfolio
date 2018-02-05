@@ -30,7 +30,6 @@ describe 'HomePage' do
 	
 	it 'navigates to about me page via button' do
 		@browser.about_me_button()
-		sleep 3
 		expect(@browser.about_identifier.displayed?).to eq(true)
 	end
 

@@ -14,7 +14,7 @@ describe 'Blogs Page' do
   end
 
   it 'goes to the blogs page' do
-   sleep 2
+  #  sleep 1
    expect(@browser.blog_identifier.displayed?).to eq(true)
   end
 
