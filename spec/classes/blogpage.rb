@@ -11,7 +11,7 @@ class BlogPage < BaseClass
   end
 
   def new_blog_link()
-    find_element_with_wait(xpath: "/html/body/div[2]/div/a", "time" => 15 )
+    find_element_with_wait(xpath: "/html/body/div[2]/div/a", "time" => 5 )
   end
 
   def write_blog_title(text)
