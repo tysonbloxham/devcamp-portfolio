@@ -14,7 +14,7 @@ describe 'HomePage' do
 	end
 
   it 'Goes to the homepage' do
-  	sleep 2
+  	sleep 1
   	expect(@browser.welcome_message.displayed?).to eq(true)
 	end
 
