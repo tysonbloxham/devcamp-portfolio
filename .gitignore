@@ -24,3 +24,6 @@
 
 # Ignore rspec test tracking files
 examples.txt
+
+# Ignore rspec log files
+fresh_server_tests.txt
