@@ -11,11 +11,11 @@ class BlogPage < BaseClass
   end
 
   def new_blog_link()
-    find_element_with_wait(xpath: "/html/body/div[2]/div/a", "time" => 5 )
+    find_element_with_wait(xpath: "/html/body/div[2]/div/a" )
   end
 
   def write_blog_title(text)
-    title = find_element_with_wait(xpath: '//*[@id="blog_title"]', 'time' => 5 )
+    title = find_element_with_wait(xpath: '//*[@id="blog_title"]' )
     write_things( title, text )
   end
 

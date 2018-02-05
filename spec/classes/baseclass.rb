@@ -17,7 +17,7 @@ class BaseClass
     element.send_keys writing
   end
 
-  def find_element_with_wait(what, time = 10)
+  def find_element_with_wait(what, time = 5)
     wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
     begin
       wait.until {
@@ -52,15 +52,15 @@ class BaseClass
   end
 
   def logout_link()
-    find_element_with_wait(link: 'Logout', "time" => 5)
+    find_element_with_wait(link: 'Logout')
   end
 
   def login_link()
-    find_element_with_wait(link: 'Login', "time" => 5)
+    find_element_with_wait(link: 'Login')
   end
 
   def blogs_link()
-    blog = find_element_with_wait(link: 'Blog', "time" => 5)
+    blog = find_element_with_wait(link: 'Blog')
     blog.click
   end
 
@@ -69,23 +69,23 @@ class BaseClass
   end
 
   def blog_identifier()
-    find_element_with_wait(xpath: "/html/body/div[2]/div/h1", "time" => 5)
+    find_element_with_wait(xpath: "/html/body/div[2]/div/h1")
   end
 
   def portfolio_identifier()
-    find_element_with_wait(xpath: "//h1[text()='My Portfolio']", "time" => 5)
+    find_element_with_wait(xpath: "//h1[text()='My Portfolio']")
   end
 
   def navicon()
-    find_element_with_wait(xpath: "//span[@class='navbar-toggler-icon']", "time" => 5)
+    find_element_with_wait(xpath: "//span[@class='navbar-toggler-icon']")
   end
 
   def about_identifier()
-    find_element_with_wait(xpath: "//h1[text()='About Me']", "time" => 5)
+    find_element_with_wait(xpath: "//h1[text()='About Me']")
   end
 
   def contact_identifier()
-    find_element_with_wait(xpath: "//h1[text()='Contact Me']", "time" => 5)
+    find_element_with_wait(xpath: "//h1[text()='Contact Me']")
   end
 
   def get_title()

@@ -12,17 +12,17 @@ class HomePage < BaseClass
   end
   
   def about_me_link()
-    about_me = find_element_with_wait(xpath: "//a[@href='/about-me'][text()='About Me'][text()='About Me']", "time" => 5)
+    about_me = find_element_with_wait(xpath: "//a[@href='/about-me'][text()='About Me'][text()='About Me']")
     about_me.click    
   end
 
   def about_me_button()
-    about_button = find_element_with_wait(xpath: "//a[@class='btn btn-lg btn-primary'][text()='About Me']", "time" => 5)
+    about_button = find_element_with_wait(xpath: "//a[@class='btn btn-lg btn-primary'][text()='About Me']")
     about_button.click
   end
 
   def contact_link()
-    contact = find_element_with_wait(link: 'Contact', "time" => 5)
+    contact = find_element_with_wait(link: 'Contact')
     contact.click
   end
 
