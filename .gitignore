@@ -27,3 +27,6 @@ examples.txt
 
 # Ignore rspec log files
 fresh_server_tests.txt
+
+# Ignore html formatted test results
+tests.html
