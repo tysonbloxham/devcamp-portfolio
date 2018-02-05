@@ -4,6 +4,8 @@
 		)
 end
 
+puts " 3 topics created"
+
 10.times do |blog|
 	Blog.create!(
 		title: "My Blog Post #{blog}",
@@ -11,6 +13,8 @@ end
 		topic_id: Topic.last.id
 	)
 end
+
+puts "10 blogs created"
 
 8.times do |portfolio_item|
 	Portfolio.create!(
@@ -22,6 +26,8 @@ end
 	)
 end
 
+puts "8 Ruby on Rails portfolio items created"
+
 1.times do |portfolio_item|
 	Portfolio.create!(
 		title: "Portfolio title: #{portfolio_item}",
@@ -32,11 +38,15 @@ end
 	)
 end
 
+puts "1 Angular portfolio item created"
+
 3.times do |technology|
   Portfolio.last.technologies.create!(
     name: "Technology #{technology}"
   )
 end
+
+puts "3 technologies created"
 
 User.create!(
 	email: "admin@test.com",
@@ -45,4 +55,5 @@ User.create!(
 	password_confirmation: "Hansolo",
 	roles: "site_admin"
 )
+
 puts "1 admin created!"
