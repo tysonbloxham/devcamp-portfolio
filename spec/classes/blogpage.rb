@@ -49,7 +49,7 @@ class BlogPage < BaseClass
   end
 
   def delete_blog_on_show()
-    delete = find_element_with_wait(xpath: '/html/body/div[3]/div/div[1]/a[2]', 'time' => 3 )
+    delete = find_element_with_wait(xpath: "//a[text()='Delete']")
     delete.click
     accept_alert()
   end
