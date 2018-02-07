@@ -14,12 +14,11 @@ describe 'Blogs Page' do
   end
 
   it 'goes to the blogs page' do
-  #  sleep 1
    expect(@browser.blog_identifier.displayed?).to eq(true)
   end
 
   it 'makes sure users must be signed in to write new blogs' do
-    expect(@browser.new_blog_link()).to eq(false)
+    expect(@browser.new_blog_link).to eq(false)
   end
 
   it 'logins in from blogs page and navigate back to blogs' do
@@ -28,11 +27,11 @@ describe 'Blogs Page' do
     expect(@browser.login_link).to eq(false)
   end
 
-  it 'writes a new blog' do
+  it 'writes a new blog special' do
     @browser.login_on_blogs()
     @browser.new_blog_link.click()
     @browser.write_new_blog()
-    expect(@browser.get_title()).to eq("A Title")
+    expect(@browser.get_title).to eq("A Title")
     @browser.delete_blog_on_show()
   end
 
@@ -55,6 +54,6 @@ describe 'Blogs Page' do
   it 'navigates to github' do
     @browser.github_link()
     @browser.switching_tabs()
-    expect(@browser.get_title()).to include("tysonbloxham")
+    expect(@browser.get_title).to include("tysonbloxham")
   end
 end
