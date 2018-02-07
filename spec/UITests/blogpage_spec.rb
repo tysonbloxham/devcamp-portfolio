@@ -27,12 +27,13 @@ describe 'Blogs Page' do
     expect(@browser.login_link).to eq(false)
   end
 
-  it 'writes a new blog special' do
+  it 'writes a new blog' do
     @browser.login_on_blogs()
     @browser.new_blog_link.click()
     @browser.write_new_blog()
     expect(@browser.get_title).to eq("A Title")
     @browser.delete_blog_on_show()
+    sleep 1
   end
 
   it 'tries to write a blog without a title' do
