@@ -22,10 +22,12 @@ describe 'Login' do
   it 'logs in as an admin' do
     @browser.admin_login()
     expect(@browser.logout_link().displayed?).to eq(true)
+    # TODO: Remove parenthesis to look more Ruby
 	end
 	
   it 'logs in with incorrect info' do
     @browser.wrong_login()
 		expect(@browser.login_link().displayed?).to eq(true)
+    # TODO: Remove parenthesis to look more Ruby
 	end
 end
