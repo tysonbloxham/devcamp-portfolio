@@ -3,7 +3,7 @@ require 'rails_helper'
 require_relative '../classes/baseclass.rb'
 require_relative '../classes/portfoliopage.rb'
 
-describe 'Portfolio Page' do
+describe 'PortfolioPage' do
   before(:each) do
     @browser = PortfolioPage.new
     @browser.goto()
