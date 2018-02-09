@@ -41,6 +41,6 @@ class PortfolioPage < BaseClass
   end
 
   def masthead_identifier()
-    find_element_with_wait(xpath: "/html/body/section/div/h1")
+    find_element_with_wait(xpath: "//h1[@class='jumbotron-heading'][text()='My Portfolio']")
   end
 end
