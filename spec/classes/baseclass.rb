@@ -71,7 +71,7 @@ class BaseClass
   end
 
   def blog_identifier()
-    find_element_with_wait(xpath: "/html/body/div[2]/div/h1")
+    find_element_with_wait(xpath: "//h1[contains(text(),'My Blog')]")
   end
 
   def portfolio_identifier()
