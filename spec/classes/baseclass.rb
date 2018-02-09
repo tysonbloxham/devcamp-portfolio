@@ -3,7 +3,9 @@ require 'selenium-webdriver'
 class BaseClass
 
   def initialize()
-    @driver=Selenium::WebDriver.for :chrome
+    options = Selenium::WebDriver::Chrome::Options.new
+    # options.add_argument('start-fullscreen')
+    @driver=Selenium::WebDriver.for :chrome, options: options
     @admin_email = "admin@test.com"
     @admin_password = "Hansolo"
   end
