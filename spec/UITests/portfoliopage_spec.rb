@@ -39,7 +39,7 @@ describe 'Portfolio Page' do
   it 'logs in from portfolio page' do
     @browser.login_on_portfolio()
     @browser.open_navbar()
-    expect(@browser.login_link()).to eq(false)
+    expect(@browser.login_link).to eq(false)
   end
 
   it 'goes to show of a portfolio' do
