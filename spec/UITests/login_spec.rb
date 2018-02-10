@@ -34,10 +34,16 @@ describe 'Register' do
     @browser.close_browser()
   end
 
-  it 'Creates a new user' do
-    @browser.create_new_user()
+  it 'creates a new user' do
+    @browser.create_correct_user()
     @browser.submit_button()
     expect(@browser.logout_link.displayed?).to eq(true)
+  end
+
+  it 'tries to create a user with too short of a password' do
+    @browser.create_short_password_user()
+    @browser.submit_button()
+    expect(@browser.short_password_error.displayed?).to eq(true)
   end
 end
 
