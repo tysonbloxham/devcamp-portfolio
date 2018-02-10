@@ -8,6 +8,7 @@ class Login < BaseClass
     @login_url = 'localhost:3000/login'
     @new_login = Faker::Internet.email
     @new_password = 'asdfasdf'
+    @short_password = 'asdf'
     @new_name = Faker::StarWars.character
     @wrong_email = "wrong@wrong.com"
     @wrong_password = "wrongwrongwrong"
@@ -21,18 +22,40 @@ class Login < BaseClass
     setup(@login_url)
   end
 
-  def create_new_user()
-    email = find_element_with_wait(xpath: '//*[@id="user_email"]')
-    write_things(email, @new_login)
+  def create_new_user(email, password, password_confirmation, name)
+    email_field = find_element_with_wait(xpath: '//input[@id="user_email"]')
+    write_things(email_field, email)
 
-    password = find_element_with_wait(xpath: '//*[@id="user_password"]')
-    write_things(password, @new_password)
+    password_field = find_element_with_wait(xpath: "//input[@id='user_password']")
+    write_things(password_field, password)
 
-    password_confirmation = find_element_with_wait(xpath: '//*[@id="user_password_confirmation"]')
-    write_things(password_confirmation, @new_password)
+    password_confirmation_field = find_element_with_wait(xpath: "//input[@id='user_password_confirmation']")
+    write_things(password_confirmation_field, password_confirmation)
 
-    name = find_element_with_wait(xpath: '//*[@id="user_name"]')
-    write_things(name, @new_name)
+    name_field = find_element_with_wait(xpath: "//input[@id='user_name']")
+    write_things(name_field, name)
+  end
+
+  # def create_new_user()
+  #   email = find_element_with_wait(xpath: '//*[@id="user_email"]')
+  #   write_things(email, @new_login)
+
+  #   password = find_element_with_wait(xpath: '//*[@id="user_password"]')
+  #   write_things(password, @new_password)
+
+  #   password_confirmation = find_element_with_wait(xpath: '//*[@id="user_password_confirmation"]')
+  #   write_things(password_confirmation, @new_password)
+
+  #   name = find_element_with_wait(xpath: '//*[@id="user_name"]')
+  #   write_things(name, @new_name)
+  # end
+
+  def create_correct_user()
+    create_new_user(@new_login, @new_password, @new_password, @new_name)
+  end
+
+  def create_short_password_user()
+    create_new_user(@new_login, @short_password, @short_password, @new_name)
   end
 
   def wrong_login()
@@ -43,4 +66,9 @@ class Login < BaseClass
     sign_up = find_element_with_wait(xpath: '//*[@id="new_user"]/div/div[4]/div[1]/input')
     sign_up.click()
   end
+
+  def short_password_error()
+    find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[text()='Password is too short (minimum is 6 characters)']")
+  end
+
 end
