@@ -22,8 +22,6 @@ class Login < BaseClass
   end
 
   def create_new_user()
-    goto_register()
-
     email = find_element_with_wait(xpath: '//*[@id="user_email"]')
     write_things(email, @new_login)
 
