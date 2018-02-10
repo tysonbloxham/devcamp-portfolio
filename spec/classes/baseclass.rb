@@ -45,7 +45,7 @@ class BaseClass
   	passwordfield = find_element_with_wait(xpath: '//*[@id="user_password"]')
     write_things(passwordfield, password)
     
-  	submitbutton = find_element_with_wait(xpath: '//*[@id="new_user"]/div[4]/input')
+  	submitbutton = find_element_with_wait(xpath: "//input[@class='btn btn-primary']")
   	submitbutton.click
   end
 
