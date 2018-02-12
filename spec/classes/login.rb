@@ -36,20 +36,6 @@ class Login < BaseClass
     write_things(name_field, name)
   end
 
-  # def create_new_user()
-  #   email = find_element_with_wait(xpath: '//*[@id="user_email"]')
-  #   write_things(email, @new_login)
-
-  #   password = find_element_with_wait(xpath: '//*[@id="user_password"]')
-  #   write_things(password, @new_password)
-
-  #   password_confirmation = find_element_with_wait(xpath: '//*[@id="user_password_confirmation"]')
-  #   write_things(password_confirmation, @new_password)
-
-  #   name = find_element_with_wait(xpath: '//*[@id="user_name"]')
-  #   write_things(name, @new_name)
-  # end
-
   def create_correct_user()
     create_new_user(@new_login, @new_password, @new_password, @new_name)
   end
@@ -71,4 +57,7 @@ class Login < BaseClass
     find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[text()='Password is too short (minimum is 6 characters)']")
   end
 
+  def password_confirmation_error()
+    find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[text()='Password confirmation doesn't match Password']")
+  end
 end
