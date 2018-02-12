@@ -51,5 +51,10 @@ describe 'Register' do
     @browser.submit_button()
     expect(@browser.password_confirmation_error.displayed?).to eq(true)
   end
-end
 
+  it 'tries to create a user with no name' do
+    @browser.create_no_name_user()
+    @browser.submit_button()
+    expect(@browser.no_name_error.displayed?).to eq(true)
+  end
+end
