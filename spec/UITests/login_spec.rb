@@ -46,7 +46,7 @@ describe 'Register' do
     expect(@browser.short_password_error.displayed?).to eq(true)
   end
 
-  it 'tries to create a user with wrong password confirmation special' do
+  it 'tries to create a user with wrong password confirmation' do
     @browser.create_wrong_confirmation_user()
     @browser.submit_button()
     expect(@browser.password_confirmation_error.displayed?).to eq(true)
