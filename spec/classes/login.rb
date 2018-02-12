@@ -44,6 +44,10 @@ class Login < BaseClass
     create_new_user(@new_login, @short_password, @short_password, @new_name)
   end
 
+  def create_wrong_confirmation_user()
+    create_new_user(@new_login, @new_password, @short_password, @new_name)
+  end
+
   def wrong_login()
     login(@wrong_email, @wrong_password)
   end
@@ -58,6 +62,6 @@ class Login < BaseClass
   end
 
   def password_confirmation_error()
-    find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[text()='Password confirmation doesn't match Password']")
+    find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[contains(text(),'Password confirmation')]")
   end
 end
