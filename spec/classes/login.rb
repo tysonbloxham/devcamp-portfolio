@@ -52,6 +52,10 @@ class Login < BaseClass
     create_new_user(@new_login, @new_password, @short_password, @new_name)
   end
 
+  def create_no_email_user()
+    create_new_user("", @new_password, @new_password, @new_name)
+  end
+
   def wrong_login()
     login(@wrong_email, @wrong_password)
   end
@@ -71,5 +75,9 @@ class Login < BaseClass
 
   def no_name_error()
     find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[contains(text(),'Name') and contains(text(),'be blank')]")
+  end
+
+  def no_email_error()
+    find_element_with_wait(xpath: "//*[@id='error_explanation']/ul/li[contains(text(),'Email') and contains(text(),'be blank')]")
   end
 end
