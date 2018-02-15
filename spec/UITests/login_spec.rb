@@ -57,4 +57,10 @@ describe 'Register' do
     @browser.submit_button()
     expect(@browser.no_name_error.displayed?).to eq(true)
   end
+
+  it 'tries to create a user with no email' do
+    @browser.create_no_email_user()
+    @browser.submit_button()
+    expect(@browser.no_email_error.displayed?).to eq(true)
+  end
 end
