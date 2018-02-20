@@ -1,10 +1,11 @@
-<div class="card">
   <div class="card-block inner cover background-card">
       
     <h1 class='text-center'>Sign up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <div class="card">
+        <p><%= devise_error_messages! %></p>
+      </div>
 
         <div class="row">
 
@@ -54,4 +55,3 @@
       <% end %>
     </div>
   </div>
-</div>
