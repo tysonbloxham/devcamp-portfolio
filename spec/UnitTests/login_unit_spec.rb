@@ -10,4 +10,11 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
   end
+
+  describe "validation" do
+    it 'creates a user with no name' do
+      @user.name = nil
+      expect(@user).to_not be_valid
+    end  
+  end
 end 
