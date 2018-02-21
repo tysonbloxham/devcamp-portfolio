@@ -224,5 +224,15 @@ body {
   border-radius: 15px;
 }
 
+.error-card {
+  background-color: rgba(0,0,0,0.0);
+  border: none;
+  width: 80%;
+  margin: auto;
+}
 
+.error-card ul {
+  margin: auto;
+  padding-left: 10%;
+}
 
