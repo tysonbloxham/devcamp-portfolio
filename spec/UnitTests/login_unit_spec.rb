@@ -21,5 +21,10 @@ RSpec.describe User, type: :model do
       @user.email = nil
       expect(@user).to_not be_valid
     end
+
+    it 'creates a user with improper email' do
+      @user.email = "Something"
+      expect(@user).to_not be_valid
+    end 
   end
 end 
