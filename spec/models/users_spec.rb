@@ -31,5 +31,10 @@ RSpec.describe User, type: :model do
       @user.password = nil
       expect(@user).to_not be_valid
     end
+
+    it 'creates a user with non-matching password confirmation' do
+      @user.password_confirmation = "wrong password"
+      expect(@user).to_not be_valid
+    end 
   end
 end 
