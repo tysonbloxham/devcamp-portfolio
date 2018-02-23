@@ -26,5 +26,10 @@ RSpec.describe User, type: :model do
       @user.email = "Something"
       expect(@user).to_not be_valid
     end 
+
+    it 'creates a user with no password' do
+      @user.password = nil
+      expect(@user).to_not be_valid
+    end
   end
 end 
