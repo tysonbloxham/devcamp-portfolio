@@ -1,3 +1,6 @@
 --color
 --require spec_helper
+-P spec/**/*unit_spec.rb
+--format html
+--out tests.html
 --format documentation
