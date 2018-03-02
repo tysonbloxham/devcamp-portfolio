@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     @user = FactoryBot.create(:user)
   end
 
-  describe "unit registration" do
+  describe "registration" do
     it 'creates a new user' do
       expect(@user).to be_valid
     end
