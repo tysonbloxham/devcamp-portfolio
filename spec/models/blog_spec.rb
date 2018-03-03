@@ -1,14 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Blog, type: :model do
-  describe "creation" do
-    before do
-      @blog = FactoryBot.create(:blog)
-    end
+  before(:each) do
+    @blog = FactoryBot.create(:blog)
+  end
 
+  describe "creation" do
     it "can be created" do
       expect(@blog).to be_valid
     end
-    
   end
+
+  describe "validation" do
+    it "creates a blog with no title" do
+      @blog.title = nil
+      expect(@blog).to_not be_valid  
+    end
+  end
+  
+    
 end
