@@ -16,7 +16,10 @@ RSpec.describe Blog, type: :model do
       @blog.title = nil
       expect(@blog).to_not be_valid  
     end
+
+    it "creates a blog with no body" do
+      @blog.body = nil
+      expect(@blog).to_not be_valid
+    end
   end
-  
-    
 end
