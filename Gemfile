@@ -55,6 +55,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-selenium'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

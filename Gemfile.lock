@@ -103,6 +103,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
+    database_cleaner (1.6.1)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -300,6 +301,7 @@ DEPENDENCIES
   carrierwave-aws (~> 1.1)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  database_cleaner
   devise (~> 4.3)
   dotenv-rails (~> 2.2, >= 2.2.1)
   factory_bot_rails
