@@ -1,6 +1,6 @@
 --color
 --require spec_helper
--P spec/models/*spec.rb
+-P spec/features/*spec.rb
 --format html
 --out tests.html
 --format documentation
