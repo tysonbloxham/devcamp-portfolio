@@ -9,6 +9,9 @@ require 'capybara/rspec'
 require 'capybara/rails'
 require 'selenium/webdriver'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
@@ -60,6 +63,9 @@ RSpec.configure do |config|
   config.before(:each, :js => true) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
+
+  config.include FactoryBot::Syntax::Methods
+
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
