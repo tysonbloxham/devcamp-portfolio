@@ -18,6 +18,8 @@ RSpec.describe Blog, type: :feature do
   end
 
   describe "new" do
+    let(:admin) { FactoryBot.create(:admin) }
+
     before(:each) do
       visit blogs_path
     end
@@ -25,6 +27,12 @@ RSpec.describe Blog, type: :feature do
     it "can't create posts without logging in" do
       visit new_blog_path
       expect(page).to have_current_path(root_path)
+    end
+
+    it "can log in as admin and create posts" do
+      login_as(admin, :scope => :user)
+      visit new_blog_path
+      expect(page).to have_current_path(new_blog_path)
     end
   end
 end  
