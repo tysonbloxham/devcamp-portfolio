@@ -9,6 +9,11 @@ RSpec.describe Blog, type: :feature do
     it "can be visited" do
       expect(page.status_code).to eq(200)
     end
-    
+
+    it "has blogs" do
+      blog = FactoryBot.create(:blog_two)
+      visit blogs_path
+      expect(page).to have_content(/title|body/)
+    end
   end
 end  
