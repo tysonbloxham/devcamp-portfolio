@@ -16,4 +16,15 @@ RSpec.describe Blog, type: :feature do
       expect(page).to have_content(/title|body/)
     end
   end
+
+  describe "new" do
+    before(:each) do
+      visit blogs_path
+    end
+
+    it "can't create posts without logging in" do
+      visit new_blog_path
+      expect(page).to have_current_path(root_path)
+    end
+  end
 end  
