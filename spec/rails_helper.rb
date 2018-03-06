@@ -28,6 +28,10 @@ Capybara.register_driver :headless_chrome do |app|
 end
 
 Capybara.javascript_driver = :headless_chrome
+
+#enable to take a screenshot of page on test failure
+Capybara::Screenshot.autosave_on_failure = false
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
