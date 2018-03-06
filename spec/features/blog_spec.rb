@@ -42,4 +42,19 @@ RSpec.describe Blog, type: :feature do
       expect(page).to have_current_path(new_blog_path)
     end
   end
+
+  describe "delete" do
+    let(:admin) { FactoryBot.create(:admin) }
+    before(:each) do
+      visit blogs_path
+    end
+
+    it 'can be deleted' do
+      login_as(admin, :scope => :user)
+      post_to_delete = FactoryBot.create(:blog_two)
+      visit blogs_path
+      find(:xpath, "//a[@href='/blogs/#{post_to_delete.slug}' and @data-method='delete']").click
+      expect(page).to_not have_content(post_to_delete.title)
+    end
+  end
 end  
