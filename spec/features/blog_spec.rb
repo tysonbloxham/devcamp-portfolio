@@ -25,18 +25,18 @@ RSpec.describe Blog, type: :feature do
       visit blogs_path
     end
 
-    it "can't create posts without logging in" do
+    it "can't create blogs without logging in" do
       visit new_blog_path
       expect(page).to have_current_path(root_path)
     end
 
-    it "can't create posts as a non-admin user" do
+    it "can't create blogs as a non-admin user" do
       login_as(user, :scope => :user)
       visit new_blog_path
       expect(page).to have_current_path(root_path)
     end
 
-    it "can log in as admin and create posts" do
+    it "can log in as admin and create blogs" do
       login_as(admin, :scope => :user)
       visit new_blog_path
       expect(page).to have_current_path(new_blog_path)
