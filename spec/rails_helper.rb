@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'selenium/webdriver'
+require 'capybara-screenshot/rspec'
 
 include Warden::Test::Helpers
 Warden.test_mode!
