@@ -11,7 +11,8 @@ class BaseClass
   end
 
   def setup(url)
-    @driver.manage.window.maximize
+    # currently not able to maximize window. Needs to be investigated
+    # @driver.manage.window.maximize
     @driver.navigate.to url 
   end
 
